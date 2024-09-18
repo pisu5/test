@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Faculty Login</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .login-container {
+      margin-top: 5%;
+      max-width: 450px;
+      padding: 30px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .login-container h2 {
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #343a40;
+    }
+
+    .form-control {
+      border-radius: 30px;
+      padding: 15px;
+    }
+
+    .btn-login {
+      border-radius: 30px;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .btn-login:hover {
+      background-color: #0056b3;
+    }
+
+    .login-footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #6c757d;
+    }
+
+    @media (max-width: 768px) {
+      .login-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="login-container">
+        <h2>Faculty Login</h2>
+        <form>
+          <!-- Email Input -->
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="facultyEmail"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+
+          <!-- Password Input -->
+          <div class="form-group">
+            <input
+              type="password"
+              class="form-control"
+              id="facultyPassword"
+              placeholder="Enter password"
+              required
+            />
+          </div>
+
+          <!-- Login Button -->
+          <button type="submit" class="btn btn-primary btn-login btn-block">
+            Login
+          </button>
+        </form>
+
+        <!-- Forgot Password Link -->
+        <div class="login-footer">
+          <p>
+            <a href="./facultyhome.html">Forgot Password?</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
+  <script
+    src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    crossorigin="anonymous"
+  ></script>
+</body>
+</html>
