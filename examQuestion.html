@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Exam</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+      }
+      .container {
+        padding: 50px 0;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .question {
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: transform 0.3s;
+      }
+      .question.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .question h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        color: #007bff;
+      }
+      .options label {
+        display: block;
+        margin-bottom: 10px;
+        cursor: pointer;
+      }
+      .options input[type="radio"] {
+        margin-right: 10px;
+        cursor: pointer;
+      }
+      .timer {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #6c757d;
+      }
+      .navigation {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .navigation button {
+        font-size: 1.2rem;
+        border-radius: 20px;
+        padding: 10px 20px;
+        margin-right: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        transition: background-color 0.3s;
+        cursor: pointer;
+      }
+      .navigation button:hover {
+        background-color: #0056b3;
+      }
+      .submit-button {
+        text-align: center;
+        margin-top: 30px;
+      }
+      .submit-button button {
+        font-size: 1.2rem;
+        border-radius: 20px;
+        padding: 10px 30px;
+        background-color: #28a745;
+        color: #fff;
+        border: none;
+        transition: background-color 0.3s;
+        cursor: pointer;
+      }
+      .submit-button button:hover {
+        background-color: #218838;
+      }
+      .progress-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .progress {
+        height: 10px;
+        background-color: #e9ecef;
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .progress-bar {
+        background-color: #007bff;
+        border-radius: 20px;
+      }
+      .motivational-message {
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #6c757d;
+      }
+      .download-button {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .download-button button {
+        font-size: 1.2rem;
+        border-radius: 20px;
+        padding: 10px 30px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        transition: background-color 0.3s;
+        cursor: pointer;
+      }
+      .download-button button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-container">
+        <div class="progress">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 25%"
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <small>Question 1 of 4</small>
+      </div>
+      <div class="motivational-message">
+        <p>Believe in yourself! You've got this.</p>
+      </div>
+      <div class="question active">
+        <h3>Question 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit?</p>
+        <div class="options">
+          <label
+            ><input
+              type="radio"
+              name="answer1"
+              value="A
+                  "
+            />
+            Option A</label
+          >
+          <label
+            ><input type="radio" name="answer1" value="B" /> Option B</label
+          >
+          <label
+            ><input type="radio" name="answer1" value="C" /> Option C</label
+          >
+          <label
+            ><input type="radio" name="answer1" value="D" /> Option D</label
+          >
+        </div>
+      </div>
+
+      <!-- Add remaining questions with similar structure -->
+
+      <div class="timer">Time Left: <span id="timer">15</span></div>
+      <div class="navigation">
+        <button class="btn btn-primary" onclick="nextQuestion()">Next</button>
+      </div>
+
+      <div class="submit-button">
+        <button class="btn btn-success" onclick="submitExam()">
+          Submit Exam
+        </button>
+      </div>
+
+      <div class="download-button" style="display: none">
+        <button class="btn btn-primary" onclick="downloadPDF()">
+          Download Questions as PDF
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript code remains unchanged
+      // Define variables
+      var currentQuestion = 1;
+      var totalQuestions = document.querySelectorAll(".question").length;
+      var timer;
+
+      // Function to start the timer
+      function startTimer() {
+        var timeLeft = 15; // Time per question in seconds
+        timer = setInterval(function () {
+          document.getElementById("timer").textContent = timeLeft;
+          timeLeft--;
+          if (timeLeft < 0) {
+            clearInterval(timer);
+            nextQuestion();
+          }
+        }, 1000);
+      }
+
+      // Function to move to the next question
+      function nextQuestion() {
+        clearInterval(timer); // Clear previous timer
+        if (currentQuestion < totalQuestions) {
+          currentQuestion++;
+          updateProgress(); // Update progress bar
+          document.getElementById("timer").textContent = "15"; // Reset timer
+          // Update question content and options for next question if available
+          var currentQuestionElement =
+            document.querySelector(".question.active");
+          currentQuestionElement.classList.remove("active");
+          var nextQuestionElement = document.querySelector(
+            ".question:nth-child(" + currentQuestion + ")"
+          );
+          nextQuestionElement.classList.add("active");
+          startTimer(); // Start timer for next question
+        } else {
+          // No more questions left
+          alert("You have answered all questions.");
+        }
+      }
+
+      // Function to update the progress bar
+      function updateProgress() {
+        var progressValue = (currentQuestion / totalQuestions) * 100;
+        var progressBar = document.querySelector(".progress-bar");
+        progressBar.style.width = progressValue + "%";
+        progressBar.setAttribute("aria-valuenow", progressValue);
+      }
+
+      // Function to submit the exam
+      function submitExam() {
+        clearInterval(timer); // Clear timer
+        // Add logic to submit exam (e.g., validate answers, calculate score, etc.)
+        alert("Exam submitted!");
+
+        // Show the download button
+        var downloadButton = document.querySelector(".download-button");
+        downloadButton.style.display = "block";
+      }
+
+      // Function to download questions as PDF
+      function downloadPDF() {
+        // Add logic to generate PDF with questions and options
+        alert("Download PDF functionality will be implemented soon.");
+      }
+
+      // Start timer for the first question when the page loads
+      startTimer();
+      updateProgress(); // Initialize progress bar
+    </script>
+  </body>
+</html>

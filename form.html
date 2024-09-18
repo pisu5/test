@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scholarship Test Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+    }
+    label {
+        font-weight: bold;
+    }
+    input[type="text"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    .presented-by {
+        text-align: center;
+        margin-top: 20px;
+        font-style: italic;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>Scholarship Test Application</h2>
+    <form action="submit.php" method="POST">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <br>
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <label for="dob">Date of Birth:</label>
+        <brr><br>
+        <input type="date" id="dob" name="dob" required>
+        
+        <label for="university">University:</label>
+        <input type="text" id="university" name="university" required>
+        <label for="gpa">Mobile Number:</label>
+        <input type="number" id="gpa" name="gpa" required>
+        <label for="gpa">GPA:</label>
+        <input type="text" id="gpa" name="gpa" required>
+        
+        <input type="submit" value="Submit">
+    </form>
+    <div class="presented-by">Presented by Zint Institute</div>
+</div>
+</body>
+</html>

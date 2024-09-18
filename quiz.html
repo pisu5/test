@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Exams and Quizzes</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+      .navbar {
+        background-color: #007bff;
+      }
+      .navbar-brand,
+      .navbar-nav .nav-link {
+        color: #fff !important;
+      }
+      .exam-card {
+        background-color: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .exam-card:hover {
+        transform: translateY(-5px);
+      }
+      .exam-card img {
+        max-width: 100%;
+        border-radius: 15px 15px 0 0;
+      }
+      .exam-card .card-body {
+        padding: 20px;
+      }
+      .exam-card h5 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+      .exam-card p {
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+      .exam-card .btn {
+        background-color: #007bff;
+        border-color: #007bff;
+        font-size: 1.2rem;
+        border-radius: 20px;
+        padding: 10px 20px;
+        transition: background-color 0.3s;
+      }
+      .exam-card .btn:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+      }
+      .progress {
+        height: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: #f2f2f2;
+      }
+      .progress-bar {
+        background-color: #007bff;
+      }
+      .review {
+        border-left: 4px solid #007bff;
+        padding-left: 10px;
+        margin-bottom: 10px;
+      }
+      .user {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+      .rating {
+        color: #ffc107; /* Yellow color for stars */
+        margin-bottom: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">ExamPlatform</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <section class="exams-section">
+      <div class="container">
+        <h2 class="text-center mb-5">All Exams and Quizzes</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="exam-card">
+              <img
+                src="https://via.placeholder.com/400x250"
+                class="card-img-top"
+                alt="Exam 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Exam 1</h5>
+                <p class="card-text">
+                  Description of Exam 1. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Start Exam</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="exam-card">
+              <img
+                src="https://via.placeholder.com/400x250"
+                class="card-img-top"
+                alt="Exam 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Exam 2</h5>
+                <p class="card-text">
+                  Description of Exam 2. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Start Exam</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="exam-card">
+              <img
+                src="https://via.placeholder.com/400x250"
+                class="card-img-top"
+                alt="Exam 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Exam 3</h5>
+                <p class="card-text">
+                  Description of Exam 3. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Start Exam</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="exam-card">
+              <img
+                src="https://via.placeholder.com/400x250"
+                class="card-img-top"
+                alt="Exam 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Exam 3</h5>
+                <p class="card-text">
+                  Description of Exam 3. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Start Exam</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="exam-card">
+              <img
+                src="https://via.placeholder.com/400x250"
+                class="card-img-top"
+                alt="Exam 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Exam 3</h5>
+                <p class="card-text">
+                  Description of Exam 3. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Start Exam</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="exam-card">
+              <img
+                src="https://via.placeholder.com/400x250"
+                class="card-img-top"
+                alt="Exam 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Exam 3</h5>
+                <p class="card-text">
+                  Description of Exam 3. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Start Exam</a>
+              </div>
+            </div>
+          </div>
+          <!-- Add more exam cards here -->
+        </div>
+      </div>
+    </section>
+
+    <section class="exams-section">
+      <div class="container">
+        <h2 class="text-center mb-5">All Exams and Quizzes</h2>
+        <!-- Filter buttons -->
+        <div class="text-center mb-4">
+          <button class="btn btn-outline-primary mx-2">All</button>
+          <select class="btn btn-outline-primary mx-2" name="" id="">
+            <option value="">Tally</option>
+            <option value="">DCA</option>
+            <option value="">MS EXCEL</option>
+            <option value="">TALLY PRIME</option>
+            <option value="">PYTHON</option>
+            <option value="">JAVA</option>
+            <option value="">WEB DEVELOPMENT</option>
+            <option value="">NODEJS</option>
+            <option value="">REACTJS</option>
+            <option value="">PHP</option>
+          </select>
+
+          <!-- Add more filter buttons as needed -->
+        </div>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="exam-card">
+              <img
+                src="https://via.placeholder.com/400x250"
+                class="card-img-top"
+                alt="Exam 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Exam 1</h5>
+                <p class="card-text">
+                  Description of Exam 1. Lorem ipsum dolor sit amet, consectetur
+                  adipiscing elit.
+                </p>
+                <a href="#" class="btn btn-primary">Start Exam</a>
+              </div>
+            </div>
+          </div>
+          <!-- Add more exam cards here -->
+        </div>
+        <!-- Progress bar -->
+        <div class="progress mb-3">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: 60%"
+            aria-valuenow="60"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          >
+            60% Complete
+          </div>
+        </div>
+        <!-- Reviews section -->
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">User Reviews</h5>
+            <div class="review">
+              <div class="user">John Doe</div>
+              <div class="rating">⭐⭐⭐⭐⭐</div>
+              <div class="comment">Excellent exam! Highly recommended.</div>
+            </div>
+            <!-- Add more user reviews as needed -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>

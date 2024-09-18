@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scholarship Test Form</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f6fa475c26.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: auto 150px;
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      header > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      header img {
+        max-width: 200px;
+        height: auto;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 1.5em;
+        text-align: center;
+      }
+
+      header p {
+        margin: 5px 0;
+        font-size: 1em;
+        text-align: center;
+      }
+
+      .photo-box {
+        width: 150px;
+        height: 200px;
+        border: 2px solid #000;
+        text-align: center;
+        line-height: 200px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #504a4a;
+        margin-bottom: 10px;
+      }
+
+      form {
+        margin-top: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+      }
+
+      .note {
+        margin: 20px 0;
+        font-size: 1em;
+        color: #555;
+      }
+
+      .prizes {
+        list-style-type: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+      }
+
+      .prizes li {
+        margin: 5px 0;
+      }
+
+      .social-media-icons {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .social-media-icons a {
+        display: inline-block;
+        margin: 0 10px;
+        color: #007bff;
+        font-size: 1.5em;
+      }
+
+      .social-media-icons span {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      button {
+        margin: 5px;
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        font-size: 1em;
+      }
+
+      button:hover {
+        background: #0056b3;
+      }
+
+      #submiit {
+        background-color: forestgreen;
+      }
+
+      #reset {
+        background-color: red;
+      }
+
+      footer {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 0.9em;
+        color: #555;
+      }
+
+      /* Media Queries for Responsiveness */
+      @media (max-width: 768px) {
+        header {
+          grid-template-columns: 1fr;
+        }
+
+        .photo-box {
+          display: none;
+        }
+
+        header h1,
+        header p {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div>
+          <img src="./logo-zint-png-format-2022.png" alt="Institute Logo" />
+          <h1>FREE SCHOLARSHIP TEST (All Students)</h1>
+          <p>TIME - 30 Minutes | MM - 50</p>
+        </div>
+        <div class="photo-box">Attach Photo</div>
+      </header>
+      <form id="formdat">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" />
+        </div>
+        <div class="form-group">
+          <label for="father-name">Father Name:</label>
+          <input type="text" id="father-name" name="father-name" />
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile:</label>
+          <input type="tel" id="mobile" name="mobile" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" />
+        </div>
+        <div class="form-group">
+          <label for="class">Class:</label>
+          <input type="text" id="class" name="class" />
+        </div>
+        <div class="form-group">
+          <label for="college">College Name:</label>
+          <input type="text" id="college" name="college" />
+        </div>
+        <div class="form-group">
+          <label for="exam-date">Select Exam Date:</label>
+          <select id="exam-date" name="exam-date">
+            <option value="">Select Exam date</option>
+            <option value="2024-06-22">22-06-2024</option>
+            <option value="2024-06-23">23-06-2024</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exam-time">Select Exam Shift:</label>
+          <select id="exam-time" name="exam-time">
+            <!-- Exam times will be populated by JavaScript -->
+          </select>
+        </div>
+
+        <p class="note">
+          नोट: स्कॉलरशिप Test में प्राइज कुछ इस प्रकार रहेंगे मौका हाथ से न
+          निकाले जाय इसलिए फॉर्म आज ही भरें
+        </p>
+        <p class="note">
+          कृपया अपने फॉर्म के साथ एक अपना पासपोर्ट साइज फोटो लेके आये
+        </p>
+        <span class="add">
+          परीक्षा केंद्र / पता - फूलबाग , रेलवे फाटक के पास साई बाबा रोड
+          ग्वालियर
+        </span>
+
+        <ul class="prizes">
+          <li>1<sup>st</sup> प्राइज पर फीस में 100% Discount रहेगा</li>
+          <li>2<sup>nd</sup> प्राइज पर फीस में 75% Discount रहेगा</li>
+          <li>3<sup>rd</sup> प्राइज पर फीस में 60% Discount रहेगा</li>
+          <li>4<sup>th</sup> प्राइज पर फीस में 50% Discount रहेगा</li>
+          <li>5<sup>th</sup> प्राइज पर फीस में 40% Discount रहेगा</li>
+        </ul>
+        <button id="submiit" type="submit">Submit</button>
+        <button id="reset" type="reset">Reset</button>
+      </form>
+      <div class="social-media-icons">
+        <span>For More Details Visit:</span>
+        <a href="http://facebook.com/zintinstitue" target="_blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://wa.me/message/566X4OFZUI3TL1" target="_blank"
+          ><i class="fa-brands fa-whatsapp" style="color: #39b305"></i
+        ></a>
+        <a href="https://www.instagram.com/zintinstitute/?hl=en" target="_blank"
+          ><i class="fa-brands fa-instagram" style="color: #f11e72"></i
+        ></a>
+        <a href="https://zintinstitute.com/" target="_blank"
+          ><i class="fa-solid fa-globe" style="color: #032026"></i
+        ></a>
+      </div>
+      <footer class="footer">
+        <p>एडमिशन ओपन हो चुके हैं जल्दी ज्वाइन करें</p>
+        <p>
+          STENO/CODING/GRAPHICS DESIGNING/DIGITAL
+          MARKETING/DCA/PGDCA/BCA/CPCT/BASIC COMPUTER/FULL STACK
+          DEVELOPER/PYTHON/JAVA/DSA/ENGLISH SPEAKING AND GRAMMAR
+        </p>
+        <p>परीक्षा फॉर्म लगाना अनिवार्य है</p>
+        <p>
+          रिजल्ट Phone एवं WhatsApp ग्रुप द्वारा बताया जायेगा इसलिए मोबाइल सही
+          से डालें
+        </p>
+        <p>BRANCHES - PHOOL BAGH GWALIOR CALL 8965975222 , 8817872737</p>
+      </footer>
+    </div>
+    <a id="pdfLink">view pdf</a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const examDateSelect = document.getElementById("exam-date");
+        const examTimeSelect = document.getElementById("exam-time");
+
+        const timings = {
+          "2024-06-22": [
+            "5:00 PM to 5:30 PM",
+            "5:30 PM to 6:00 PM",
+            "6:00 PM to 6:30 PM",
+            "6:30 PM to 7:00 PM",
+            "7:00 PM to 7:30 PM",
+          ],
+          "2024-06-23": [
+            "8:00 AM to 8:30 AM",
+            "8:30 AM to 9:00 AM",
+            "9:00 AM to 9:30 AM",
+            "9:30 AM to 10:00 AM",
+            "10:00 AM to 10:30 AM",
+            "10:30 AM to 11:00 AM",
+            "11:00 AM to 11:30 AM",
+            "11:30 AM to 12:00 PM",
+            "12:00 PM to 12:30 PM",
+            "12:30 PM to 1:00 PM",
+            "1:00 PM to 1:30 PM",
+            "1:30 PM to 2:00 PM",
+            "2:00 PM to 2:30 PM",
+            "2:30 PM to 3:00 PM",
+            "3:00 PM to 3:30 PM",
+            "3:30 PM to 4:00 PM",
+            "4:00 PM to 4:30 PM",
+            "4:30 PM to 5:00 PM",
+            "5:00 PM to 5:30 PM",
+            "5:30 PM to 6:00 PM",
+            "6:00 PM to 6:30 PM",
+            "6:30 PM to 7:00 PM",
+          ],
+        };
+
+        examDateSelect.addEventListener("change", function () {
+          const selectedDate = examDateSelect.value;
+          const timeOptions = timings[selectedDate] || [];
+
+          // Clear existing options
+          examTimeSelect.innerHTML = "";
+
+          // Populate new options
+          timeOptions.forEach((time) => {
+            const option = document.createElement("option");
+            option.value = time;
+            option.textContent = time;
+            examTimeSelect.appendChild(option);
+          });
+        });
+      });
+    </script>
+    <script type="module" src="./testForm.js"></script>
+  </body>
+</html>
